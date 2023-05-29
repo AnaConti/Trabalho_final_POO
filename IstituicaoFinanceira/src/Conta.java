@@ -6,9 +6,9 @@ public abstract class Conta {
     protected Date dataAbertura, dataUltimaMovimetacao;
     protected boolean ativo;
 
-    public Conta(String numeroConta, double saldoAtual){
+    public Conta(){
         this.numeroConta=numeroConta;
-        this.saldoAtual=saldoAtual;
+        this.saldoAtual=0.0;
         this.dataAbertura= new Date();
         this.dataUltimaMovimetacao= new Date();
         this.ativo=true;
