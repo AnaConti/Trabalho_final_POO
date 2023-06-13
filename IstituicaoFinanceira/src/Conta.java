@@ -52,4 +52,8 @@ public abstract class Conta {
                 ", ativo=" + ativo +
                 '}';
     }
+
+    // public void realizarTransacao(float valor){
+    //     Transacao tr = new Transacao(this, valor);
+    // }
 }
