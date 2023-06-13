@@ -6,7 +6,7 @@ public class Agencia {
     public Agencia(){
         this.numero=000;
         this.nome="";
-        this.endereco='';
+        this.endereco="";
         this.gerente= new Gerente();
     }
 

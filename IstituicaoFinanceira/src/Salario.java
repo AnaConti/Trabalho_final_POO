@@ -1,21 +1,21 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Salario extends Conta{
-    private int limteTransferencia;
+    private int limiteTransferencia;
     private int limiteSaque;
 
     public Salario(){
         super();
         this.limiteSaque=0;
-        this.limteTransferencia=0;
+        this.limiteTransferencia=0;
 
     }
 
     public void resetLimite(){
-        Date data = new Date();
-        if(data.getDate()==1){
+        LocalDate data = LocalDate.now();
+        if(data.getDayOfMonth()==1){
             this.limiteSaque=5;
-            this.limteTransferencia=2;
+            this.limiteTransferencia=2;
         }
     }
 
@@ -23,7 +23,7 @@ public class Salario extends Conta{
         return limiteSaque;
     }
 
-    public int getLimteTransferencia() {
-        return limteTransferencia;
+    public int getLimiteTransferencia() {
+        return limiteTransferencia;
     }
 }
