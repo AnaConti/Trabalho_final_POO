@@ -19,7 +19,10 @@ public abstract class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        //if(this.cpfValido(cpd))
+            this.cpf = cpf;
+        //else
+            //throw new RuntimeException("CPF invalido");
     }
 
     public String getNome() {
@@ -64,4 +67,6 @@ public abstract class Pessoa {
                 ", dataNascimento='" + dataNascimento + '\'' +
                 '}';
     }
+
+    //funcao valida cpf
 }
