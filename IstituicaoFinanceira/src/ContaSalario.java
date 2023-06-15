@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 
-public class Salario extends Conta{
+public class ContaSalario extends Conta{
     private int limiteTransferencia;
     private int limiteSaque;
 
-    public Salario(){
+    public ContaSalario(){
         super();
         this.limiteSaque=0;
         this.limiteTransferencia=0;
