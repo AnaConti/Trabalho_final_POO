@@ -1,22 +1,23 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Gerente extends Funcionario{
-    private Date dataInicioGerencia;
+    private LocalDate dataInicioGerencia;
     private Agencia agencia;
     private boolean curso;
 
     public Gerente(){
         super();
-        this.dataInicioGerencia= new Date();
+        this.dataInicioGerencia= LocalDate.now();
         this.agencia= new Agencia();
         this.curso=true;
     }
 
-    public Date getDataInicioGerencia() {
+    public LocalDate getDataInicioGerencia() {
         return dataInicioGerencia;
     }
 
-    public void setDataInicioGerencia(Date dataInicioGerencia) {
+    public void setDataInicioGerencia(LocalDate dataInicioGerencia) {
         this.dataInicioGerencia = dataInicioGerencia;
     }
 
@@ -32,6 +33,12 @@ public class Gerente extends Funcionario{
         this.curso = curso;
     }
 
+    //metodo para ajustar salario do gerente 
+    public void calculaSalario(double comissao){
+        double novoSalario= super.getSalario()+comissao;
+        super.setSalario(novoSalario);
+    }
+
     @Override
     public String toString() {
         return "Gerente{" +
@@ -45,4 +52,6 @@ public class Gerente extends Funcionario{
                 ", dataNascimento='" + dataNascimento + '\'' +
                 '}';
     }
+
+
 }
