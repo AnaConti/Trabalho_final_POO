@@ -1,9 +1,10 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Funcionario extends Pessoa{
     private String carteiraTrabalho, rg, sexo, cargo;
     private double salario;
-    private Date anoIngresso;
+    private LocalDate anoIngresso;
 
     public Funcionario(){
         super();
@@ -12,7 +13,7 @@ public class Funcionario extends Pessoa{
         this.sexo="";
         this.cargo="";
         this.salario=0.0;
-        this.anoIngresso= new Date();
+        this.anoIngresso= LocalDate.now();
     }
 
     public String getCarteiraTrabalho() {
@@ -55,11 +56,11 @@ public class Funcionario extends Pessoa{
         this.salario = salario;
     }
 
-    public Date getAnoIngresso() {
+    public LocalDate getAnoIngresso() {
         return anoIngresso;
     }
 
-    public void setAnoIngresso(Date anoIngresso) {
+    public void setAnoIngresso(LocalDate anoIngresso) {
         this.anoIngresso = anoIngresso;
     }
 
@@ -78,5 +79,15 @@ public class Funcionario extends Pessoa{
                 ", endereco='" + endereco + '\'' +
                 ", dataNascimento='" + dataNascimento + '\'' +
                 '}';
+    }
+
+    //metodo calcula novo salario se o funcionario tiver mais de 15 anos na empresa
+    public void calculaSalario(){
+        int anosTrabalhados = LocalDate.now().getYear()-this.anoIngresso.getYear();
+
+        if(anosTrabalhados>=15){
+            double novoSalario = getSalario()*1.1;
+            this.setSalario(novoSalario);
+        }
     }
 }
