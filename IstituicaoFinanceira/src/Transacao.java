@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.Date;
 
-public abstract class Transacao {
+public class Transacao {
     private Conta conta;
     private String canal;
     private LocalDate data;
@@ -35,5 +35,10 @@ public abstract class Transacao {
                 ", canal='" + canal + '\'' +
                 ", data=" + data +
                 '}';
+    }
+
+    //colocar a senha
+    public void consultaSaldo(){
+         System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());
     }
 }
