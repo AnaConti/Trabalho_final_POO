@@ -1,9 +1,9 @@
-public class Saque extends Transacao {
-    private double valor;
+public class EfetuarPagamento extends Transacao{
+    public double valor;
 
-    public Saque( Conta conta, double valor, String canal){
+    public EfetuarPagamento( Conta conta, double valor, String canal){
         super(conta, canal);
-        this.valor = valor;
+        this.valor=valor;
     }
 
     public double getValor() {
@@ -16,8 +16,7 @@ public class Saque extends Transacao {
 
     @Override
     public String toString() {
-        return super.toString()+
-                "Saque{" +
+        return "EfetuarPagamento{" +
                 "valor=" + valor +
                 '}';
     }
