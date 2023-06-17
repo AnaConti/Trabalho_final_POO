@@ -5,6 +5,7 @@ public abstract class Conta {
     protected double saldoAtual;
     protected Date dataAbertura, dataUltimaMovimetacao;
     protected boolean ativo;
+    private String senha;
 
     public Conta(){
         this.numeroConta=numeroConta;
@@ -12,6 +13,7 @@ public abstract class Conta {
         this.dataAbertura= new Date();
         this.dataUltimaMovimetacao= new Date();
         this.ativo=true;
+
     }
 
     public String getNumeroConta() {
@@ -40,6 +42,21 @@ public abstract class Conta {
 
     public void updateUltimaMovimentacao(){
         this.dataUltimaMovimetacao=new Date();
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public boolean senhaCorreta(String senhaDigitada){
+        if(this.senha.equals(senhaDigitada))
+            return true;
+
+        return false;
     }
 
     @Override
