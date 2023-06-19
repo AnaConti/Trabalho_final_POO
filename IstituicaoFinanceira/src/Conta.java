@@ -7,6 +7,7 @@ public abstract class Conta {
     protected boolean ativo;
     private String senha;
 
+
     public Conta(){
         this.numeroConta=numeroConta;
         this.saldoAtual=0.0;
@@ -52,6 +53,14 @@ public abstract class Conta {
         this.senha = senha;
     }
 
+    public boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo){
+        this.ativo=ativo;
+    }
+    
     public boolean senhaCorreta(String senhaDigitada){
         if(this.senha.equals(senhaDigitada))
             return true;
