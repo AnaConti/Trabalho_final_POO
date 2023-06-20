@@ -6,7 +6,7 @@ public class Deposito extends Transacao{
         this.valor = valor;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
