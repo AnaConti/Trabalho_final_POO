@@ -16,7 +16,7 @@ public class EfetuarPagamento extends Transacao{
 
     public void efetuarPagamento(double valor){
         if(solicitarSenha()){
-            if(valor>0 && valor>super.conta.getSaldoAtual()){
+            if(valor>0 && valor<super.conta.getSaldoAtual()){
                 double saldo=super.conta.getSaldoAtual();
                 saldo-=valor;
             
