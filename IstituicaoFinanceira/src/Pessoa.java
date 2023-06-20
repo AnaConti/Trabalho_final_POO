@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.InputMismatchException;
 
 public abstract class Pessoa {
@@ -130,5 +132,10 @@ public abstract class Pessoa {
                 '}';
     }
 
-    //funcao valida cpf
+    protected int calcularIdade() {
+        LocalDate dataNasc = LocalDate.parse(dataNascimento);
+        LocalDate dataAtual = LocalDate.now();
+        Period periodo = Period.between(dataNasc, dataAtual);
+        return periodo.getYears();
+    }
 }
