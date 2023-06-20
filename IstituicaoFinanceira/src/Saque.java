@@ -14,6 +14,23 @@ public class Saque extends Transacao {
         this.valor = valor;
     }
 
+    public void saque(double valor){
+        if(solicitarSenha()){
+            if(valor>0 && valor>super.conta.getSaldoAtual()){
+                double saldo=super.conta.getSaldoAtual();
+                saldo-=valor;
+            
+                super.conta.setSaldoAtual(saldo);
+                super.conta.updateUltimaMovimentacao();
+            }else{
+                System.out.println("Saldo insuficiente");
+            }
+        }else{
+            System.out.println("Senha incorreta");
+        }
+        
+    }
+
     @Override
     public String toString() {
         return super.toString()+

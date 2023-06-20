@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Transacao {
     Scanner sc = new Scanner(System.in);
-    private Conta conta;
-    private String canal;
-    private LocalDate data;
+    protected Conta conta;
+    protected String canal;
+    protected LocalDate data;
 
     public Transacao(Conta conta,  String canal){
         this.data  = LocalDate.now();
@@ -50,15 +50,16 @@ public class Transacao {
         }
     }
 
-    public void consultaSaldo(){
-        if(solicitarSenha()){
-            if(conta.getAtivo()){
-                System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());    
-            }else{
-                System.out.println("Conta inativa");
-            }
-        }else{
-            System.out.println("Senha incorreta!");
-        }
-    }
+    // public double consultaSaldo(){
+    //     if(solicitarSenha()){
+    //         if(conta.getAtivo()){
+    //             System.out.println("Saldo atual da conta: " + conta.getSaldoAtual()); 
+    //             return conta.getSaldoAtual()   
+    //         }else{
+    //             System.out.println("Conta inativa");
+    //         }
+    //     }else{
+    //         System.out.println("Senha incorreta!");
+    //     }
+    // }
 }
