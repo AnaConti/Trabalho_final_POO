@@ -1,6 +1,7 @@
 import java.util.Date;
 
 public abstract class Conta {
+    static String numero_geral="5430918485738789";
     protected String numeroConta;
     protected double saldoAtual;
     protected Date dataAbertura, dataUltimaMovimetacao;
@@ -9,12 +10,16 @@ public abstract class Conta {
 
 
     public Conta(){
-        this.numeroConta=numeroConta;
         this.saldoAtual=0.0;
         this.dataAbertura= new Date();
         this.dataUltimaMovimetacao= new Date();
         this.ativo=true;
 
+        long numeroAtual = Long.parseLong(numero_geral);
+        numeroAtual++;
+        this.numero_geral = String.valueOf(numeroAtual);
+
+        this.numeroConta=numero_geral;
     }
 
     public String getNumeroConta() {
