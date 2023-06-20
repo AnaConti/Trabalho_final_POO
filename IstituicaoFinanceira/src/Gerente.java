@@ -9,8 +9,7 @@ public class Gerente extends Funcionario{
 
     public Gerente(){
         super();
-        this.dataInicioGerencia= LocalDate.now();
-        this.agencia= new Agencia();
+        this.dataInicioGerencia= LocalDate.now();;
         this.curso=true;
     }
 
