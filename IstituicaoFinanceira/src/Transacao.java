@@ -50,16 +50,5 @@ public class Transacao {
         }
     }
 
-    // public double consultaSaldo(){
-    //     if(solicitarSenha()){
-    //         if(conta.getAtivo()){
-    //             System.out.println("Saldo atual da conta: " + conta.getSaldoAtual()); 
-    //             return conta.getSaldoAtual()   
-    //         }else{
-    //             System.out.println("Conta inativa");
-    //         }
-    //     }else{
-    //         System.out.println("Senha incorreta!");
-    //     }
-    // }
+    
 }
