@@ -1,7 +1,7 @@
 public class Deposito extends Transacao{
-    private float valor;
+    private double valor;
 
-    public Deposito(Conta conta, float valor, String canal){
+    public Deposito(Conta conta, double valor, String canal){
         super(conta, canal);
         this.valor = valor;
     }
