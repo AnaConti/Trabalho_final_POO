@@ -1,6 +1,7 @@
 public class Cliente extends Pessoa{
     private String escolaridade;
     private Agencia agencia;
+    private Conta conta;
 
     public Cliente(){
         super();
@@ -46,6 +47,14 @@ public class Cliente extends Pessoa{
 
     public void setAgencia(Agencia agencia) {
         this.agencia = agencia;
+    }
+
+    public void setConta(Conta conta) {
+        this.conta = conta;
+    }
+
+    public Conta getConta() {
+        return conta;
     }
 
     @Override
