@@ -39,14 +39,26 @@ public class Transacao {
                 '}';
     }
 
-    public void solicitarSenha(){
+    public boolean solicitarSenha(){
         System.out.println("Insira a senha para prosseguir: ");
         String senha = sc.nextLine();
 
-        
+        if(conta.senhaCorreta(senha)){
+            return true;
+        }else{
+            return false;
+        }
     }
-    //colocar a senha
+
     public void consultaSaldo(){
-         System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());
+        if(solicitarSenha()){
+            if(conta.getAtivo()){
+                System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());    
+            }else{
+                System.out.println("Conta inativa");
+            }
+        }else{
+            System.out.println("Senha incorreta!");
+        }
     }
 }

@@ -60,7 +60,7 @@ public abstract class Conta {
     public void setAtivo(boolean ativo){
         this.ativo=ativo;
     }
-    
+
     public boolean senhaCorreta(String senhaDigitada){
         if(this.senha.equals(senhaDigitada))
             return true;
@@ -68,6 +68,7 @@ public abstract class Conta {
         return false;
     }
 
+    
     @Override
     public String toString() {
         return "Conta{" +
