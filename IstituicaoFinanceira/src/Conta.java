@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Conta {
+    static double limiteTransacao = 1000.1;
     static String numero_geral="5430918485738789";
     protected String numeroConta;
     protected double saldoAtual;
@@ -21,6 +22,15 @@ public abstract class Conta {
         this.numero_geral = String.valueOf(numeroAtual);
 
         this.numeroConta=numero_geral;
+        this.transacoes = new ArrayList<>();
+    }
+
+    public void addTransacao(Transacao tr){
+        this.transacoes.add(tr);
+    }
+
+    public ArrayList<Transacao> getTransacoes() {
+        return transacoes;
     }
 
     public String getNumeroConta() {
@@ -74,7 +84,14 @@ public abstract class Conta {
         return false;
     }
 
-    
+    public static double getLimiteTransacao() {
+        return limiteTransacao;
+    }
+
+    public static void setLimiteTransacao(double limiteTransacao) {
+        Conta.limiteTransacao = limiteTransacao;
+    }
+
     @Override
     public String toString() {
         return "Conta{" +
@@ -86,7 +103,4 @@ public abstract class Conta {
                 '}';
     }
 
-    // public void realizarTransacao(float valor){
-    //     Transacao tr = new Transacao(this, valor);
-    // }
 }
