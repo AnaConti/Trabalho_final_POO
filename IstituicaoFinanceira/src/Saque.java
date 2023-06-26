@@ -14,7 +14,7 @@ public class Saque extends Transacao {
         this.valor = valor;
     }
 
-    public void saque(double valor){
+    public void saque(double valor) throws SaldoInsuficiente, SenhaInvalida{
         if(solicitarSenha()){
             if(valor>0 && valor<super.conta.getSaldoAtual()){
                 double saldo=super.conta.getSaldoAtual();
@@ -23,10 +23,10 @@ public class Saque extends Transacao {
                 super.conta.setSaldoAtual(saldo);
                 super.conta.updateUltimaMovimentacao();
             }else{
-                System.out.println("Saldo insuficiente");
+                throw new SaldoInsuficiente(this.conta.getSaldoAtual());
             }
         }else{
-            System.out.println("Senha incorreta");
+            throw new SenhaInvalida();
         }
         
     }

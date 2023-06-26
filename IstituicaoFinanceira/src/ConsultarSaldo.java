@@ -3,7 +3,7 @@ public class ConsultarSaldo extends Transacao{
         super(conta, canal);
     }
 
-    public void consultaSaldo(){
+    public void consultaSaldo() throws SenhaInvalida{
         if(super.solicitarSenha()){
             if(conta.getAtivo()){
                 System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());   
@@ -11,7 +11,7 @@ public class ConsultarSaldo extends Transacao{
                 System.out.println("Conta inativa");
             }
         }else{
-            System.out.println("Senha incorreta!");
+            throw new SenhaInvalida();
         }
     }
 }

@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Transacao {
+public class Transacao implements Serializable {
     Scanner sc = new Scanner(System.in);
     protected Conta conta;
     protected String canal;
