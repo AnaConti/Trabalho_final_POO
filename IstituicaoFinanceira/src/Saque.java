@@ -14,7 +14,7 @@ public class Saque extends Transacao {
         this.valor = valor;
     }
 
-    public void saque(double valor) throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao{
+    public void saque() throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao{
         if(valor>this.conta.getLimiteTransacao())
             throw new LimiteTransacao("Tentativa de saque maior que o limite estabelecido na conta.");
 

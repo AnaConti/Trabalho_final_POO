@@ -14,7 +14,7 @@ public class Deposito extends Transacao{
         this.valor = valor;
     }
 
-    public void deposito(double valor) throws SenhaInvalida{
+    public void deposito() throws SenhaInvalida{
         if(solicitarSenha()){
             if(valor>0){
                 double saldo=super.conta.getSaldoAtual();
