@@ -81,6 +81,11 @@ public class Funcionario extends Pessoa{
                 '}';
     }
 
+    @Override
+    public void bonusAniversario() {
+
+    }
+
     //metodo calcula novo salario se o funcionario tiver mais de 15 anos na empresa
     public void calculaSalario(){
         int anosTrabalhados = LocalDate.now().getYear()-this.anoIngresso.getYear();

@@ -69,4 +69,9 @@ public class Cliente extends Pessoa{
                 ", dataNascimento='" + dataNascimento + '\'' +
                 '}';
     }
+
+    @Override
+    public void bonusAniversario() {
+
+    }
 }
