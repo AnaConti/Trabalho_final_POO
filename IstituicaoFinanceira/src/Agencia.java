@@ -1,20 +1,29 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Agencia {
-    private int numero;
-    private String nome, endereco;
+public class Agencia implements Serializable {
+    private String nome, endereco, numero;
 
     private ArrayList<Conta> contas;
     private ArrayList<Funcionario> funcionarios;
     private Gerente gerente;
 
     public Agencia(){
-        this.numero=000;
-        this.nome="";
-        this.endereco="";
-        this.contas= new ArrayList<>();
-        this.funcionarios= new ArrayList<>();
-        this.gerente= new Gerente();
+        this.numero       ="";
+        this.nome         ="";
+        this.endereco     ="";
+        this.contas       = new ArrayList<>();
+        this.funcionarios = new ArrayList<>();
+        this.gerente      = null;
+    }
+
+    public Agencia(String nome, String endereco, String numero, Gerente gerente){
+        this.numero       =numero;
+        this.nome         =nome;
+        this.endereco     =endereco;
+        this.contas       = new ArrayList<>();
+        this.funcionarios = new ArrayList<>();
+        this.gerente      = gerente;
     }
 
      public void adicionarConta(Conta conta) {
@@ -25,11 +34,11 @@ public class Agencia {
         funcionarios.add(funcionario);
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

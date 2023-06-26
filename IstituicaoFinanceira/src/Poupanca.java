@@ -1,10 +1,11 @@
 public class Poupanca extends Conta{
     private double rendimentoMes;
-    private static double taxaRendimento=0.0809;
+    private static double taxaRendimento = 0.0809;
 
     public Poupanca(){
         super();
-        this.rendimentoMes=0.0;
+
+        this.rendimentoMes = 0.0;
     }
 
     public double getRendimentoMes() {

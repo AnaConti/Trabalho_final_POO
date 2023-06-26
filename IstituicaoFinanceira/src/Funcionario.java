@@ -8,12 +8,24 @@ public class Funcionario extends Pessoa{
 
     public Funcionario(){
         super();
-        this.carteiraTrabalho="";
-        this.rg="";
-        this.sexo="";
-        this.cargo="";
-        this.salario=0.0;
-        this.anoIngresso= LocalDate.now();
+
+        this.carteiraTrabalho = "";
+        this.rg               = "";
+        this.sexo             = "";
+        this.cargo            = "";
+        this.salario          = 0.0;
+        this.anoIngresso      = LocalDate.now();
+    }
+
+    public Funcionario(String cpf, String nome, String carteiraTrabalho, String rg, String sexo, String cargo, double salario, LocalDate anoIngresso){
+        super(cpf, nome);
+
+        this.carteiraTrabalho = carteiraTrabalho;
+        this.rg               = rg;
+        this.sexo             = sexo;
+        this.cargo            = cargo;
+        this.salario          = salario;
+        this.anoIngresso      = anoIngresso;
     }
 
     public String getCarteiraTrabalho() {

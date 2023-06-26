@@ -1,12 +1,22 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Cliente extends Pessoa{
     private String escolaridade;
     private Agencia agencia;
-    private Conta conta;
+    private ArrayList<Conta> contas;
 
     public Cliente(){
         super();
         this.escolaridade="";
-        agencia = new Agencia();
+        agencia = null;
+    }
+
+    public Cliente(Agencia agencia, String escolaridade, String nome, String cpf){
+        super(cpf, nome);
+
+        this.escolaridade = escolaridade;
+        this.agencia      = agencia;
     }
 
     public Cliente(String cpf, String nome){
@@ -49,12 +59,30 @@ public class Cliente extends Pessoa{
         this.agencia = agencia;
     }
 
-    public void setConta(Conta conta) {
-        this.conta = conta;
+    public void addConta(Conta conta) {
+        this.contas.add(conta);
     }
 
     public Conta getConta() {
-        return conta;
+        Scanner sc = new Scanner(System.in);
+
+        for(int i = 0; i<contas.size();i++){
+            System.out.println("Conta numero "+(i+1));
+            this.contas.get(i).toString();
+        }
+
+        System.out.print("Insira qual conta deseja operar: ");
+        int op = sc.nextInt();
+        sc.nextLine();
+        op--;
+
+        try{
+            return this.contas.get(op);
+        }catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+            System.out.println("Você escolheu uma conta inexistente.");
+            return null;
+        }
     }
 
     @Override

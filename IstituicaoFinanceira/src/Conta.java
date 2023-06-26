@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Conta {
@@ -7,7 +8,7 @@ public abstract class Conta {
     protected Date dataAbertura, dataUltimaMovimetacao;
     protected boolean ativo;
     private String senha;
-
+    private ArrayList<Transacao> transacoes;
 
     public Conta(){
         this.saldoAtual=0.0;

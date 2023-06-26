@@ -5,12 +5,21 @@ public class Gerente extends Funcionario{
     private LocalDate dataInicioGerencia;
     private Agencia agencia;
     private boolean curso;
-    static double comissao;
+    private double comissao;
 
     public Gerente(){
         super();
-        this.dataInicioGerencia= LocalDate.now();;
-        this.curso=true;
+
+        this.dataInicioGerencia = LocalDate.now();;
+        this.curso              = true;
+    }
+
+    public Gerente(String cpf, String nome, String carteiraTrabalho, String rg, String sexo, String cargo, double salario, LocalDate anoIngresso, boolean curso, LocalDate dataInicioGerencia){
+        super(cpf, nome, carteiraTrabalho, rg, sexo, cargo, salario, anoIngresso);
+
+        this.dataInicioGerencia = dataInicioGerencia;
+        this.curso              = curso;
+        this.agencia            = agencia;
     }
 
     public LocalDate getDataInicioGerencia() {
@@ -33,12 +42,12 @@ public class Gerente extends Funcionario{
         this.curso = curso;
     }
 
-    public static double getComissao() {
-        return comissao;
+    public double getComissao() {
+        return this.comissao;
     }
 
-    public static void setComissao(double comissao) {
-        Gerente.comissao = comissao;
+    public void setComissao(double comissao) {
+        this.comissao = comissao;
     }
 
     //metodo para ajustar salario do gerente
