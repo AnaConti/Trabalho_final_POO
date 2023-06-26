@@ -26,17 +26,39 @@ public class Agencia implements Serializable {
         this.gerente      = gerente;
     }
 
+
+    
      public void addCliente(Cliente cliente) {
         clientes.add(cliente);
+    }
+
+    public void printClientes(){
+        for (int i = 0; i<5; i++){
+            System.out.println(clientes.get(i).toString());
+        }
     }
 
     public ArrayList<Cliente> getClientes() {
         return clientes;
     }
 
+
+
     public void addFuncionario(Funcionario funcionario) {
         funcionarios.add(funcionario);
     }
+
+    public void printFuncionarios(){
+        for (int i = 0; i<5; i++){
+            System.out.println(funcionarios.get(i).toString());
+        }
+    }
+
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+
 
     public String getNumero() {
         return numero;
@@ -69,7 +91,7 @@ public class Agencia implements Serializable {
     public void setGerente(Gerente gerente) {
         this.gerente = gerente;
     }
-    
+
      public String toString() {
         return "AgenciaBancaria{" + "numero=" + numero + "\n nome='" + nome + '\'' + "\n endereco" 
          + "\n contas=" + clientes + "\n funcionarios=" + funcionarios + '}';
