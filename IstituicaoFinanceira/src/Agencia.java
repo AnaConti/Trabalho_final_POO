@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Agencia implements Serializable {
     private String nome, endereco, numero;
 
-    private ArrayList<Conta> contas;
+    private ArrayList<Cliente> clientes;
     private ArrayList<Funcionario> funcionarios;
     private Gerente gerente;
 
@@ -12,7 +12,7 @@ public class Agencia implements Serializable {
         this.numero       ="";
         this.nome         ="";
         this.endereco     ="";
-        this.contas       = new ArrayList<>();
+        this.clientes     = new ArrayList<>();
         this.funcionarios = new ArrayList<>();
         this.gerente      = null;
     }
@@ -21,16 +21,20 @@ public class Agencia implements Serializable {
         this.numero       =numero;
         this.nome         =nome;
         this.endereco     =endereco;
-        this.contas       = new ArrayList<>();
+        this.clientes     = new ArrayList<>();
         this.funcionarios = new ArrayList<>();
         this.gerente      = gerente;
     }
 
-     public void adicionarConta(Conta conta) {
-        contas.add(conta);
+     public void addCliente(Cliente cliente) {
+        clientes.add(cliente);
     }
 
-    public void adicionarFuncionario(Funcionario funcionario) {
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void addFuncionario(Funcionario funcionario) {
         funcionarios.add(funcionario);
     }
 
@@ -65,9 +69,9 @@ public class Agencia implements Serializable {
     public void setGerente(Gerente gerente) {
         this.gerente = gerente;
     }
-
+    
      public String toString() {
         return "AgenciaBancaria{" + "numero=" + numero + "\n nome='" + nome + '\'' + "\n endereco" 
-         + "\n contas=" + contas + "\n funcionarios=" + funcionarios + '}';
+         + "\n contas=" + clientes + "\n funcionarios=" + funcionarios + '}';
     }
 }
