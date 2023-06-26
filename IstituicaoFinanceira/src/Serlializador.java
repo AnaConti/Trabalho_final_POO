@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.concurrent.ExecutionException;
 
 public class Serlializador implements Serializable {
-    public void serializar(String arq, Main instituicaoFinanceira) throws IllegalArgumentException{
+    public void serializar(String arq, Banco instituicaoFinanceira) throws IllegalArgumentException{
 
         if(arq == null || arq.isEmpty())
             throw new IllegalArgumentException("Nome de arqivo inválido!");
@@ -25,14 +25,14 @@ public class Serlializador implements Serializable {
         }
     }
 
-    public Main desserializar(String arq, Main instituicaoFinanceira){
+    public Banco desserializar(String arq){
         if(arq==null||arq.isEmpty())
             throw new IllegalArgumentException("Nome de arquivo inválido!");
 
         try {
             FileInputStream file = new FileInputStream(arq);
             ObjectInputStream banco = new ObjectInputStream(file);
-            Main obj = (Main) banco.readObject();
+            Banco obj = (Banco) banco.readObject();
             banco.close();
             file.close();
             System.out.println("Banco carregado!");
