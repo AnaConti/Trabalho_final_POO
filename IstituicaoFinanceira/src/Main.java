@@ -63,11 +63,15 @@ public class Main {
                             int opConta = sc.nextInt();
                             sc.nextLine();
 
+                            System.out.print("Insira uma senha para sua conta: ");
+                            String senha = sc.nextLine();
+
                             switch (opConta){
                                 case 1:
                                     conta = new ContaCorrente();
                                     System.out.println("Informações da sua nova conta corrente: ");
                                     System.out.println(conta.toString());
+                                    conta.setSenha(senha);
                                     cl.addConta(conta);
                                     break;
 
@@ -75,6 +79,7 @@ public class Main {
                                     conta = new Poupanca();
                                     System.out.println("Informações da sua nova conta poupanca: ");
                                     System.out.println(conta.toString());
+                                    conta.setSenha(senha);
                                     cl.addConta(conta);
                                     break;
 
@@ -82,6 +87,7 @@ public class Main {
                                     conta = new ContaSalario();
                                     System.out.println("Informações da sua nova conta Salário: ");
                                     System.out.println(conta.toString());
+                                    conta.setSenha(senha);
                                     cl.addConta(conta);
                                     break;
 
