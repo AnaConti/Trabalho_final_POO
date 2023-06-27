@@ -27,6 +27,9 @@ public class Deposito extends Transacao implements RealizaTransacao{
         if(this.valor> Conta.getLimiteTransacao()){
             throw new LimiteTransacao("Tentativa de deposito maior que o limite estabelecido na conta.");
         }
+        if(this.valor<=0)
+            throw new LimiteTransacao("O valor de depósito deve ser maior que 0");
+        
         if(solicitarSenha(senha)){
             if(valor>0){
                 double saldo=super.conta.getSaldoAtual();
