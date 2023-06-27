@@ -5,7 +5,7 @@ public class Gerente extends Funcionario{
     private LocalDate dataInicioGerencia;
     private Agencia agencia;
     private boolean curso;
-    private double comissao;
+    private static double comissao;
 
     public Gerente(){
         super();
@@ -41,12 +41,12 @@ public class Gerente extends Funcionario{
         this.curso = curso;
     }
 
-    public double getComissao() {
-        return this.comissao;
+    public static double getComissao() {
+        return Gerente.comissao;
     }
 
     public void setComissao(double comissao) {
-        this.comissao = comissao;
+        Gerente.comissao = comissao;
     }
 
     //metodo para ajustar salario do gerente
