@@ -1,4 +1,4 @@
-public class EfetuarPagamento extends Transacao{
+public class EfetuarPagamento extends Transacao implements RealizaTransacao{
     public double valor;
 
     public EfetuarPagamento( Conta conta, double valor, String canal){
@@ -14,7 +14,15 @@ public class EfetuarPagamento extends Transacao{
         this.valor = valor;
     }
 
-    public void efetuarPagamento(String senha)throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao{
+    @Override
+    public String toString() {
+        return  super.toString() + "EfetuarPagamento{" +
+                "valor=" + valor +
+                '}';
+    }
+
+    @Override
+    public void realizarTransacao(String senha) throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao {
         if(valor>this.conta.getLimiteTransacao())
             throw new LimiteTransacao("Tentativa de saque maior que o limite estabelecido na conta.");
 
@@ -22,7 +30,7 @@ public class EfetuarPagamento extends Transacao{
             if(valor>0 && valor<super.conta.getSaldoAtual()){
                 double saldo=super.conta.getSaldoAtual();
                 saldo-=valor;
-            
+
                 super.conta.setSaldoAtual(saldo);
                 super.conta.updateUltimaMovimentacao();
             }else{
@@ -31,13 +39,5 @@ public class EfetuarPagamento extends Transacao{
         }else{
             throw new SenhaInvalida();
         }
-        
-    }
-
-    @Override
-    public String toString() {
-        return  super.toString() + "EfetuarPagamento{" +
-                "valor=" + valor +
-                '}';
     }
 }

@@ -116,7 +116,7 @@ public abstract class Pessoa implements Serializable {
         }
 
         return digit10 == CPF.charAt(9) && digit11 == CPF.charAt(10);
-}
+    }
 
     @Override
     public String toString() {

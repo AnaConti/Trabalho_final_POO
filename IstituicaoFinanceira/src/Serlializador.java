@@ -25,7 +25,7 @@ public class Serlializador implements Serializable {
         }
     }
 
-    public Banco desserializar(String arq){
+    public Banco desserializar(String arq) throws IllegalArgumentException{
         if(arq==null||arq.isEmpty())
             throw new IllegalArgumentException("Nome de arquivo inválido!");
 

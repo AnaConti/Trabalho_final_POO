@@ -197,7 +197,7 @@ public class Main {
                                 switch (op){
                                     case 1:
                                         tr = new ConsultarSaldo(conta, "Internet Banking");
-                                        ((ConsultarSaldo)tr).consultaSaldo(senha);
+                                        ((ConsultarSaldo)tr).realizarTransacao(senha);
 
                                         conta.addTransacao(tr);
                                         break;
@@ -208,7 +208,7 @@ public class Main {
                                         sc.nextLine();
 
                                         tr = new Deposito(conta, valor, "Internet Banking");
-                                        ((Deposito)tr).deposito(senha);
+                                        ((Deposito)tr).realizarTransacao(senha);
 
                                         conta.addTransacao(tr);
                                         break;
@@ -219,7 +219,7 @@ public class Main {
                                         sc.nextLine();
 
                                         tr = new EfetuarPagamento(conta, valor, "Internet Banking");
-                                        ((EfetuarPagamento)tr).efetuarPagamento(senha);
+                                        ((EfetuarPagamento)tr).realizarTransacao(senha);
 
                                         conta.addTransacao(tr);
                                         break;
@@ -230,7 +230,7 @@ public class Main {
                                         sc.nextLine();
 
                                         tr = new Saque(conta, valor, "Internet Banking");
-                                        ((Saque)tr).saque(senha);
+                                        ((Saque)tr).realizarTransacao(senha);
 
                                         conta.addTransacao(tr);
                                         break;

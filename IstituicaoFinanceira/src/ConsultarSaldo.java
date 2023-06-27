@@ -1,12 +1,13 @@
-public class ConsultarSaldo extends Transacao{
+public class ConsultarSaldo extends Transacao implements RealizaTransacao{
     public ConsultarSaldo(Conta conta, String canal){
         super(conta, canal);
     }
 
-    public void consultaSaldo(String senha) throws SenhaInvalida{
+    @Override
+    public void realizarTransacao(String senha) throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao {
         if(super.solicitarSenha(senha)){
             if(conta.getAtivo()){
-                System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());   
+                System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());
             }else{
                 System.out.println("Conta inativa");
             }
