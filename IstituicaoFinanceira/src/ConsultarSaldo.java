@@ -3,8 +3,8 @@ public class ConsultarSaldo extends Transacao{
         super(conta, canal);
     }
 
-    public void consultaSaldo() throws SenhaInvalida{
-        if(super.solicitarSenha()){
+    public void consultaSaldo(String senha) throws SenhaInvalida{
+        if(super.solicitarSenha(senha)){
             if(conta.getAtivo()){
                 System.out.println("Saldo atual da conta: " + conta.getSaldoAtual());   
             }else{

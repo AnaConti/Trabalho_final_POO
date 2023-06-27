@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Cliente extends Pessoa{
     private String escolaridade;
@@ -45,43 +44,29 @@ public class Cliente extends Pessoa{
         this.contas.add(conta);
     }
 
-    public Conta getConta() {
-        Scanner sc = new Scanner(System.in);
-
-        for(int i = 0; i<contas.size();i++){
-            System.out.println("Conta numero "+(i+1));
-            this.contas.get(i).toString();
-        }
-
-        System.out.print("Insira qual conta deseja operar: ");
-        int op = sc.nextInt();
-        sc.nextLine();
-        op--;
-
-        try{
-            return this.contas.get(op);
-        }catch (IndexOutOfBoundsException e){
-            System.out.println(e.getMessage());
-            System.out.println("Você escolheu uma conta inexistente.");
-            return null;
-        }
+    public ArrayList<Conta> getContas() {
+        return contas;
     }
 
     @Override
     public String toString() {
         return "Cliente{" +
-                "escolaridade='" + escolaridade + '\'' +
-                ", agencia=" + agencia +
-                ", cpf='" + cpf + '\'' +
-                ", nome='" + nome + '\'' +
-                ", estadoCivil='" + estadoCivil + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                '}';
+                "\nescolaridade='" + escolaridade + '\'' +
+                ", \ncontas=" + contas +
+                ", \ncpf='" + cpf + '\'' +
+                ", \nnome='" + nome + '\'' +
+                ", \nestadoCivil='" + estadoCivil + '\'' +
+                ", \nendereco='" + endereco + '\'' +
+                ", \ndataNascimento='" + dataNascimento + '\'' +
+                "\n}";
     }
 
     @Override
     public void bonusAniversario() {
-
+        if(verificarAniversario()){
+            for(int i = 0; i<this.getContas().size(); i++){
+                this.contas.get(i).setSaldoAtual(this.contas.get(i).getSaldoAtual()*1.001);
+            }
+        }
     }
 }

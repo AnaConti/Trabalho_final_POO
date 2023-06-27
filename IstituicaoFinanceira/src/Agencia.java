@@ -93,7 +93,7 @@ public class Agencia implements Serializable {
     }
 
      public String toString() {
-        return "AgenciaBancaria{" + "numero=" + numero + "\n nome='" + nome + '\'' + "\n endereco" 
-         + "\n contas=" + clientes + "\n funcionarios=" + funcionarios + '}';
+        return "Agencia{" + "\nnumero=" + numero + "\n nome='" + nome + '\'' + "\n endereco"
+         + endereco+ "\n}";
     }
 }

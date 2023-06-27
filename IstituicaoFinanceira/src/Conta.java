@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Conta {
+public abstract class Conta implements Serializable {
     static double limiteTransacao = 1000.1;
     static String numero_geral="5430918485738789";
     protected String numeroConta;
@@ -92,15 +93,21 @@ public abstract class Conta {
         Conta.limiteTransacao = limiteTransacao;
     }
 
+    public void extrato(){
+        for(int i = 0; i<transacoes.size();i++){
+            System.out.println(transacoes.get(i).toString());
+        }
+    }
+
     @Override
     public String toString() {
         return "Conta{" +
-                "numeroConta='" + numeroConta + '\'' +
-                ", saldoAtual=" + saldoAtual +
-                ", dataAbertura=" + dataAbertura +
-                ", dataUltimaMovimetacao=" + dataUltimaMovimetacao +
-                ", ativo=" + ativo +
-                '}';
+                "\nnumeroConta='" + numeroConta + '\'' +
+                ", \nsaldoAtual=" + saldoAtual +
+                ", \ndataAbertura=" + dataAbertura +
+                ", \ndataUltimaMovimetacao=" + dataUltimaMovimetacao +
+                ", \nativo=" + ativo +
+                "\n}";
     }
 
 }

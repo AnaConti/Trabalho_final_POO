@@ -1,10 +1,7 @@
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Transacao implements Serializable {
-    Scanner sc = new Scanner(System.in);
     protected Conta conta;
     protected String canal;
     protected LocalDate data;
@@ -38,16 +35,13 @@ public class Transacao implements Serializable {
     @Override
     public String toString() {
         return "Transacao{" +
-                "conta=" + conta.getNumeroConta() +
-                ", canal='" + canal + '\'' +
-                ", data=" + data +
-                '}';
+                "\nconta=" + conta.getNumeroConta() +
+                ",\n canal='" + canal + '\'' +
+                ",\n data=" + data +
+                "\n}";
     }
 
-    public boolean solicitarSenha(){
-        System.out.println("Insira a senha para prosseguir: ");
-        String senha = sc.nextLine();
-
+    public boolean solicitarSenha(String senha){
         if(conta.senhaCorreta(senha)){
             return true;
         }else{

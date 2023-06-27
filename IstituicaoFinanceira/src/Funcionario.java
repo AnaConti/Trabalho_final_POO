@@ -88,26 +88,27 @@ public class Funcionario extends Pessoa{
     @Override
     public String toString() {
         return "Funcionario{" +
-                "carteiraTrabalho='" + carteiraTrabalho + '\'' +
-                ", rg='" + rg + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", cargo='" + cargo + '\'' +
-                ", salario=" + salario +
-                ", anoIngresso=" + anoIngresso +
-                ", cpf='" + cpf + '\'' +
-                ", nome='" + nome + '\'' +
-                ", estadoCivil='" + estadoCivil + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                '}';
+                "\ncarteiraTrabalho='" + carteiraTrabalho + '\'' +
+                ", \nrg='" + rg + '\'' +
+                ", \nsexo='" + sexo + '\'' +
+                ", \ncargo='" + cargo + '\'' +
+                ", \nsalario=" + salario +
+                ", \nanoIngresso=" + anoIngresso +
+                ", \ncpf='" + cpf + '\'' +
+                ", \nnome='" + nome + '\'' +
+                ", \nestadoCivil='" + estadoCivil + '\'' +
+                ", \nendereco='" + endereco + '\'' +
+                ", \ndataNascimento='" + dataNascimento + '\'' +
+                "\n}";
     }
 
     @Override
     public void bonusAniversario() {
-
+        if(verificarAniversario()){
+            this.salario*=1.001;
+        }
     }
 
-    //metodo calcula novo salario se o funcionario tiver mais de 15 anos na empresa
     public void calculaSalario(){
         int anosTrabalhados = LocalDate.now().getYear()-this.anoIngresso.getYear();
 
@@ -116,4 +117,6 @@ public class Funcionario extends Pessoa{
             this.setSalario(novoSalario);
         }
     }
+
+
 }

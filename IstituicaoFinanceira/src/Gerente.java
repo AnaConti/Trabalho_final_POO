@@ -58,15 +58,14 @@ public class Gerente extends Funcionario{
     @Override
     public String toString() {
         return "Gerente{" +
-                "dataInicioGerencia=" + dataInicioGerencia +
-                ", agencia=" + agencia +
-                ", curso=" + curso +
-                ", cpf='" + cpf + '\'' +
-                ", nome='" + nome + '\'' +
-                ", estadoCivil='" + estadoCivil + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                '}';
+                "\ndataInicioGerencia=" + dataInicioGerencia +
+                ", \ncurso=" + curso +
+                ", \ncpf='" + cpf + '\'' +
+                ", \nnome='" + nome + '\'' +
+                ", \nestadoCivil='" + estadoCivil + '\'' +
+                ", \nendereco='" + endereco + '\'' +
+                ", \ndataNascimento='" + dataNascimento + '\'' +
+                "\n}";
     }
 
 

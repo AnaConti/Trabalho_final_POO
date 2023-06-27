@@ -14,11 +14,11 @@ public class EfetuarPagamento extends Transacao{
         this.valor = valor;
     }
 
-    public void efetuarPagamento()throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao{
+    public void efetuarPagamento(String senha)throws SaldoInsuficiente, SenhaInvalida, LimiteTransacao{
         if(valor>this.conta.getLimiteTransacao())
             throw new LimiteTransacao("Tentativa de saque maior que o limite estabelecido na conta.");
 
-        if(solicitarSenha()){
+        if(solicitarSenha(senha)){
             if(valor>0 && valor<super.conta.getSaldoAtual()){
                 double saldo=super.conta.getSaldoAtual();
                 saldo-=valor;
