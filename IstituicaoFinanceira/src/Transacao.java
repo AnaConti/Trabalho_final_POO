@@ -31,6 +31,10 @@ public class Transacao implements Serializable {
         this.data = data;
     }
 
+    public Conta getConta() {
+        return conta;
+    }
+
     @Override
     public String toString() {
         return "Transacao{" +
