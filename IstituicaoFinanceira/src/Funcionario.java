@@ -5,11 +5,11 @@ public class Funcionario extends Pessoa{
     private String carteiraTrabalho, rg, sexo, cargo;
     private double salario;
     private LocalDate anoIngresso;
+    private Agencia agencia;
 
     public Funcionario(){
-        super();
-
-        this.carteiraTrabalho = "";
+        carteiraTrabalho = "";
+        this.agencia     = null;
         this.rg               = "";
         this.sexo             = "";
         this.cargo            = "";
@@ -17,9 +17,10 @@ public class Funcionario extends Pessoa{
         this.anoIngresso      = LocalDate.now();
     }
 
-    public Funcionario(String cpf, String nome, String carteiraTrabalho, String rg, String sexo, String cargo, double salario, LocalDate anoIngresso){
+    public Funcionario(Agencia agencia, String cpf, String nome, String carteiraTrabalho, String rg, String sexo, String cargo, double salario, LocalDate anoIngresso){
         super(cpf, nome);
 
+        this.agencia         = agencia;
         this.carteiraTrabalho = carteiraTrabalho;
         this.rg               = rg;
         this.sexo             = sexo;
@@ -74,6 +75,14 @@ public class Funcionario extends Pessoa{
 
     public void setAnoIngresso(LocalDate anoIngresso) {
         this.anoIngresso = anoIngresso;
+    }
+
+    public Agencia getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(Agencia agencia) {
+        this.agencia = agencia;
     }
 
     @Override

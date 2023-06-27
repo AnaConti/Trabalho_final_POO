@@ -10,6 +10,7 @@ public class Cliente extends Pessoa{
         super();
         this.escolaridade="";
         agencia = null;
+        this.contas       = new ArrayList<>();
     }
 
     public Cliente(Agencia agencia, String escolaridade, String nome, String cpf){
@@ -17,30 +18,11 @@ public class Cliente extends Pessoa{
 
         this.escolaridade = escolaridade;
         this.agencia      = agencia;
+        this.contas       = new ArrayList<>();
     }
 
     public Cliente(String cpf, String nome){
         super(cpf, nome);
-    }
-
-    @Override
-    public String getNome() {
-        return super.getNome();
-    }
-
-    @Override
-    public void setNome(String nome) {
-        super.setNome(nome);
-    }
-
-    @Override
-    public String getCpf() {
-        return super.getCpf();
-    }
-
-    @Override
-    public void setCpf(String cpf) {
-        super.setCpf(cpf);
     }
 
     public String getEscolaridade() {

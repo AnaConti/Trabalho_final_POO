@@ -15,11 +15,10 @@ public class Gerente extends Funcionario{
     }
 
     public Gerente(String cpf, String nome, String carteiraTrabalho, String rg, String sexo, String cargo, double salario, LocalDate anoIngresso, boolean curso, LocalDate dataInicioGerencia){
-        super(cpf, nome, carteiraTrabalho, rg, sexo, cargo, salario, anoIngresso);
+        super(null, cpf, nome, carteiraTrabalho, rg, sexo, cargo, salario, anoIngresso);
 
         this.dataInicioGerencia = dataInicioGerencia;
         this.curso              = curso;
-        this.agencia            = agencia;
     }
 
     public LocalDate getDataInicioGerencia() {
